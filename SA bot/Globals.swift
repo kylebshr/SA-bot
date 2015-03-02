@@ -16,4 +16,4 @@ let locations = ["ART": "Art Lab", "CN": "Commons North", "CS": "Commons South",
 let keys = ["ART", "CN", "CS", "HSS", "PCB", "JDT"]
 
 // base url for networking calls
-let baseURL = "http://juiceapps.net:5000/"
+let baseURL = ""

@@ -76,7 +76,9 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
 
         // send the request w/ the uid
         Alamofire.request(.GET, baseURL + "schedule", parameters: ["uuid": uid])
-            .responseJSON { (_, _, data, error) in
+            .responseJSON { (request, _, data, error) in
+
+                println(request)
 
                 // if there was an error, let the user know
                 if (error != nil) {
