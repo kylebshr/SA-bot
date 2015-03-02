@@ -42,7 +42,7 @@
 		2718DF771AA11885005BE8C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2718DF791AA11885005BE8C5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2718DF7C1AA11885005BE8C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2718DF821AA11885005BE8C5 /* SAbotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SAbotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2718DF821AA11885005BE8C5 /* SA botTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SA botTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2718DF871AA11885005BE8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2718DF881AA11885005BE8C5 /* SA_botTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SA_botTests.swift; sourceTree = "<group>"; };
 		27BE57521AA15707004DC660 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2718DF6D1AA11885005BE8C5 /* SA bot.app */,
-				2718DF821AA11885005BE8C5 /* SAbotTests.xctest */,
+				2718DF821AA11885005BE8C5 /* SA botTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,9 +179,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2718DF6C1AA11884005BE8C5 /* SAbot */ = {
+		2718DF6C1AA11884005BE8C5 /* SA bot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2718DF8C1AA11885005BE8C5 /* Build configuration list for PBXNativeTarget "SAbot" */;
+			buildConfigurationList = 2718DF8C1AA11885005BE8C5 /* Build configuration list for PBXNativeTarget "SA bot" */;
 			buildPhases = (
 				905CE9376A995D95D85554D2 /* Check Pods Manifest.lock */,
 				2718DF691AA11884005BE8C5 /* Sources */,
@@ -194,14 +194,14 @@
 			);
 			dependencies = (
 			);
-			name = SAbot;
+			name = "SA bot";
 			productName = "SA bot";
 			productReference = 2718DF6D1AA11885005BE8C5 /* SA bot.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2718DF811AA11885005BE8C5 /* SAbotTests */ = {
+		2718DF811AA11885005BE8C5 /* SA botTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2718DF8F1AA11885005BE8C5 /* Build configuration list for PBXNativeTarget "SAbotTests" */;
+			buildConfigurationList = 2718DF8F1AA11885005BE8C5 /* Build configuration list for PBXNativeTarget "SA botTests" */;
 			buildPhases = (
 				2718DF7E1AA11885005BE8C5 /* Sources */,
 				2718DF7F1AA11885005BE8C5 /* Frameworks */,
@@ -212,9 +212,9 @@
 			dependencies = (
 				2718DF841AA11885005BE8C5 /* PBXTargetDependency */,
 			);
-			name = SAbotTests;
+			name = "SA botTests";
 			productName = "SA botTests";
-			productReference = 2718DF821AA11885005BE8C5 /* SAbotTests.xctest */;
+			productReference = 2718DF821AA11885005BE8C5 /* SA botTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -235,7 +235,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2718DF681AA11884005BE8C5 /* Build configuration list for PBXProject "SAbot" */;
+			buildConfigurationList = 2718DF681AA11884005BE8C5 /* Build configuration list for PBXProject "SA bot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -248,8 +248,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2718DF6C1AA11884005BE8C5 /* SAbot */,
-				2718DF811AA11885005BE8C5 /* SAbotTests */,
+				2718DF6C1AA11884005BE8C5 /* SA bot */,
+				2718DF811AA11885005BE8C5 /* SA botTests */,
 			);
 		};
 /* End PBXProject section */
@@ -353,7 +353,7 @@
 /* Begin PBXTargetDependency section */
 		2718DF841AA11885005BE8C5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2718DF6C1AA11884005BE8C5 /* SAbot */;
+			target = 2718DF6C1AA11884005BE8C5 /* SA bot */;
 			targetProxy = 2718DF831AA11885005BE8C5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -497,7 +497,7 @@
 				);
 				INFOPLIST_FILE = "SA botTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = SAbotTests;
+				PRODUCT_NAME = "SA botTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SA bot.app/SA bot";
 			};
 			name = Debug;
@@ -512,7 +512,7 @@
 				);
 				INFOPLIST_FILE = "SA botTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = SAbotTests;
+				PRODUCT_NAME = "SA botTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SA bot.app/SA bot";
 			};
 			name = Release;
@@ -520,7 +520,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2718DF681AA11884005BE8C5 /* Build configuration list for PBXProject "SAbot" */ = {
+		2718DF681AA11884005BE8C5 /* Build configuration list for PBXProject "SA bot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2718DF8A1AA11885005BE8C5 /* Debug */,
@@ -529,7 +529,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2718DF8C1AA11885005BE8C5 /* Build configuration list for PBXNativeTarget "SAbot" */ = {
+		2718DF8C1AA11885005BE8C5 /* Build configuration list for PBXNativeTarget "SA bot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2718DF8D1AA11885005BE8C5 /* Debug */,
@@ -538,7 +538,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2718DF8F1AA11885005BE8C5 /* Build configuration list for PBXNativeTarget "SAbotTests" */ = {
+		2718DF8F1AA11885005BE8C5 /* Build configuration list for PBXNativeTarget "SA botTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2718DF901AA11885005BE8C5 /* Debug */,

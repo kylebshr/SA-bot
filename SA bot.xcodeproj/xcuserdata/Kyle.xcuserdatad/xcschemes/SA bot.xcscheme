@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2718DF6C1AA11884005BE8C5"
                BuildableName = "SA bot.app"
-               BlueprintName = "SAbot"
-               ReferencedContainer = "container:SAbot.xcodeproj">
+               BlueprintName = "SA bot"
+               ReferencedContainer = "container:SA bot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2718DF811AA11885005BE8C5"
-               BuildableName = "SAbotTests.xctest"
-               BlueprintName = "SAbotTests"
-               ReferencedContainer = "container:SAbot.xcodeproj">
+               BuildableName = "SA botTests.xctest"
+               BlueprintName = "SA botTests"
+               ReferencedContainer = "container:SA bot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2718DF811AA11885005BE8C5"
-               BuildableName = "SAbotTests.xctest"
-               BlueprintName = "SAbotTests"
-               ReferencedContainer = "container:SAbot.xcodeproj">
+               BuildableName = "SA botTests.xctest"
+               BlueprintName = "SA botTests"
+               ReferencedContainer = "container:SA bot.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,8 +58,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2718DF6C1AA11884005BE8C5"
             BuildableName = "SA bot.app"
-            BlueprintName = "SAbot"
-            ReferencedContainer = "container:SAbot.xcodeproj">
+            BlueprintName = "SA bot"
+            ReferencedContainer = "container:SA bot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,8 +77,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2718DF6C1AA11884005BE8C5"
             BuildableName = "SA bot.app"
-            BlueprintName = "SAbot"
-            ReferencedContainer = "container:SAbot.xcodeproj">
+            BlueprintName = "SA bot"
+            ReferencedContainer = "container:SA bot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,8 +95,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2718DF6C1AA11884005BE8C5"
             BuildableName = "SA bot.app"
-            BlueprintName = "SAbot"
-            ReferencedContainer = "container:SAbot.xcodeproj">
+            BlueprintName = "SA bot"
+            ReferencedContainer = "container:SA bot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
