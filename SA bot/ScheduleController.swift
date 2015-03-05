@@ -15,7 +15,8 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var scheduleTable: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-
+    @IBOutlet weak var addMessageLabel: UILabel!
+    
     var schedule = [Shift]()
     var pendingUpdate = false
 
@@ -38,6 +39,16 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
 
         // get the schedule on loading the view
         getSchedule()
+    }
+
+    func showOrHideAddMessage() {
+
+        if schedule.count == 0 {
+            addMessageLabel.hidden = false
+        }
+        else {
+            addMessageLabel.hidden = true
+        }
     }
 
     // MARK: Linked actions
@@ -78,8 +89,6 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
         Alamofire.request(.GET, baseURL + "schedule", parameters: ["uuid": uid])
             .responseJSON { (request, _, data, error) in
 
-                println(request)
-
                 // if there was an error, let the user know
                 if (error != nil) {
 
@@ -107,6 +116,7 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
                     // assign the new schedule to our array, reload the table
                     self.schedule = newSchedule
                     self.scheduleTable.reloadData()
+                    self.showOrHideAddMessage()
                 }
 
                 // end the refresher and the loading indicator that's animating on the first load
@@ -181,6 +191,7 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
             // remove the item from our array, animate the deletion, and put the new schedule
             schedule.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            showOrHideAddMessage()
             putSchedule()
         }
     }
@@ -224,6 +235,10 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
         // make a new shift with the given params
         let newShift = Shift(place: location, start: start, end: stop)
         schedule.append(newShift)
+
+        // hide the add message maybe, and reload the table
+        showOrHideAddMessage()
+        scheduleTable.reloadData()
 
         // dismiss the picker in case it's up, then dismiss the vc
         controller.dismissDatePicker()

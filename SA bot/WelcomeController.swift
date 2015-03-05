@@ -50,7 +50,7 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
 
         // send the request
         Alamofire.request(.POST, baseURL + "register", parameters: ["phone": phoneNumber])
-            .responseJSON { (_, _, json, error) in
+            .response { (_, response, json, error) in
 
                 // stop the spinner
                 self.activityIndicator.stopAnimating()
@@ -59,7 +59,8 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
                 // check if there was an error
                 if error != nil {
 
-                    self.showAlert("Server Error", message: "\(error!.localizedDescription)")
+                    NSLog("Server error: \(error!.localizedDescription)")
+                    self.showAlert("Server Error", message: "There was an error signing up")
                 }
                 // if no error, show the code input popup
                 else {
