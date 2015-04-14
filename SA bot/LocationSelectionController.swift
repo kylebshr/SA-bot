@@ -31,7 +31,7 @@ class LocationSelectionController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! UITableViewCell
 
         // set the label text to the user friends name
         cell.textLabel?.text = locations[keys[indexPath.row]]

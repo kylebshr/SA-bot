@@ -113,7 +113,7 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
         // the login button with the handler
         let loginAction = UIAlertAction(title: "Login", style: .Default) { (_) in
 
-            let loginTextField = alertController.textFields![0] as UITextField
+            let loginTextField = alertController.textFields![0] as! UITextField
 
             self.sendCodeToServer(loginTextField.text)
         }
@@ -130,7 +130,7 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
 
             // if 6 chars are entered, enable the login button
             NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue()) { (notification) in
-                loginAction.enabled = countElements(textField.text) == 6
+                loginAction.enabled = count(textField.text) == 6
             }
         }
 
@@ -154,7 +154,7 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
     }
 
     // Format the string as they type the phone number
-    func textField(textField: UITextField!, shouldChangeCharactersInRange range: NSRange, replacementString string: String!) -> Bool {
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
 
         let originalString: NSString = textField.text as NSString
 
@@ -171,12 +171,12 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
 
         // If it's over 11 chars, no more typing for you
         if (length > 11) {
-            textField.text = originalString
+            textField.text = originalString as String
             return false
         }
         // if there's 10 chars and no leading 1, no more typing for you either
         if (length > 10 && !hasLeadingOne) {
-            textField.text = originalString
+            textField.text = originalString as String
             return false
         }
 
@@ -233,7 +233,7 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
     func showMainView() {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainVC = storyboard.instantiateViewControllerWithIdentifier("MainNavController") as UINavigationController
+        let mainVC = storyboard.instantiateViewControllerWithIdentifier("MainNavController") as! UINavigationController
 
         self.presentViewController(mainVC, animated: true, completion: nil)
     }

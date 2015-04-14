@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if NSUserDefaults.standardUserDefaults().stringForKey("uid") == nil {
 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let signUpVC = storyboard.instantiateViewControllerWithIdentifier("WelcomeNavController") as UINavigationController
+            let signUpVC = storyboard.instantiateViewControllerWithIdentifier("WelcomeNavController") as! UINavigationController
 
             window = UIWindow(frame: UIScreen.mainScreen().bounds)
             window?.rootViewController = signUpVC

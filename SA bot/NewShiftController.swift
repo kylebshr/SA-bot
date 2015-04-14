@@ -202,7 +202,7 @@ class NewShiftController: UITableViewController, UIPickerViewDataSource, UIPicke
         }
         // return the row number formatted for 25 hour time
         else if component == 1 {
-            return NSString(format: "%02d", row)
+            return NSString(format: "%02d", row) as String
         }
         // time delimiter (hacky I know... is there a better way to do this?)
         else if component == 2 {
@@ -210,7 +210,7 @@ class NewShiftController: UITableViewController, UIPickerViewDataSource, UIPicke
         }
         // the minutes
         else {
-            return NSString(format: "%02d", row * 15)
+            return NSString(format: "%02d", row * 15) as String
         }
     }
 
@@ -256,7 +256,7 @@ class NewShiftController: UITableViewController, UIPickerViewDataSource, UIPicke
 
         if segue.identifier == "locationSegue" {
 
-            let vc = segue.destinationViewController as LocationSelectionController
+            let vc = segue.destinationViewController as! LocationSelectionController
             vc.delegate = self
         }
     }

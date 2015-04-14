@@ -61,7 +61,7 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
 
             scheduleTable.setEditing(false, animated: true)
             sender.title = "Edit"
-            sender.style = UIBarButtonItemStyle.Bordered
+            sender.style = UIBarButtonItemStyle.Plain
         }
         else {
 
@@ -164,7 +164,7 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        let cell = scheduleTable.dequeueReusableCellWithIdentifier("ScheduleCell") as ScheduleCell
+        let cell = scheduleTable.dequeueReusableCellWithIdentifier("ScheduleCell") as! ScheduleCell
 
         // get the shift for that schedule from the array
         let item = schedule[indexPath.row]
@@ -253,8 +253,8 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
 
         if segue.identifier == "newShiftSegue" {
 
-            let nc = segue.destinationViewController as UINavigationController
-            let vc = nc.viewControllers[0] as NewShiftController
+            let nc = segue.destinationViewController as! UINavigationController
+            let vc = nc.viewControllers[0] as! NewShiftController
             vc.delegate = self
         }
     }
