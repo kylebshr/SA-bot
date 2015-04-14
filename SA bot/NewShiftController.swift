@@ -240,7 +240,7 @@ class NewShiftController: UITableViewController, UIPickerViewDataSource, UIPicke
         }
     }
 
-    // MARK: Delegate stuff
+    // MARK: Delegate functions
 
     // this is a delegate function for when the location is selected from the location view
     func locationWasSelected(controller: LocationSelectionController, id: String) {

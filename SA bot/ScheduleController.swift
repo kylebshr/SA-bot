@@ -227,7 +227,7 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
-    // MARK: Delegate stuf
+    // MARK: Delegate functions
 
     // a delegate function for when a new shift is made by NewShiftController
     func newShiftWasMade(controller: NewShiftController, location: String, start: Double, stop: Double) {
