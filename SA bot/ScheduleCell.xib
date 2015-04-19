@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -23,7 +22,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgo-a8-Lmv">
-                        <rect key="frame" x="16" y="37" width="296" height="18"/>
+                        <rect key="frame" x="16" y="37" width="296" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -31,19 +30,19 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="fgo-a8-Lmv" firstAttribute="top" secondItem="Il9-UE-ycf" secondAttribute="bottom" constant="8" id="9nT-vJ-qGO"/>
-                    <constraint firstItem="Il9-UE-ycf" firstAttribute="trailing" secondItem="aJE-sA-YPp" secondAttribute="trailingMargin" id="Bmq-xJ-BWB"/>
-                    <constraint firstItem="Il9-UE-ycf" firstAttribute="top" secondItem="aJE-sA-YPp" secondAttribute="topMargin" id="GS9-9o-r1M"/>
-                    <constraint firstItem="fgo-a8-Lmv" firstAttribute="trailing" secondItem="aJE-sA-YPp" secondAttribute="trailingMargin" id="IUK-kM-mck"/>
-                    <constraint firstItem="fgo-a8-Lmv" firstAttribute="leading" secondItem="aJE-sA-YPp" secondAttribute="leadingMargin" constant="8" id="Oel-PH-bMs"/>
-                    <constraint firstItem="Il9-UE-ycf" firstAttribute="leading" secondItem="aJE-sA-YPp" secondAttribute="leadingMargin" constant="8" id="wbD-gX-xvb"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="fgo-a8-Lmv" secondAttribute="bottom" constant="-1.5" id="x5H-Rh-GGd"/>
+                    <constraint firstAttribute="trailing" secondItem="Il9-UE-ycf" secondAttribute="trailing" constant="8" id="Bmq-xJ-BWB"/>
+                    <constraint firstItem="Il9-UE-ycf" firstAttribute="top" secondItem="aJE-sA-YPp" secondAttribute="top" constant="8" id="GS9-9o-r1M"/>
+                    <constraint firstAttribute="trailing" secondItem="fgo-a8-Lmv" secondAttribute="trailing" constant="8" id="IUK-kM-mck"/>
+                    <constraint firstItem="fgo-a8-Lmv" firstAttribute="leading" secondItem="aJE-sA-YPp" secondAttribute="leading" constant="16" id="Oel-PH-bMs"/>
+                    <constraint firstItem="Il9-UE-ycf" firstAttribute="leading" secondItem="aJE-sA-YPp" secondAttribute="leading" constant="16" id="wbD-gX-xvb"/>
+                    <constraint firstAttribute="bottom" secondItem="fgo-a8-Lmv" secondAttribute="bottom" constant="8" id="x5H-Rh-GGd"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="locationLabel" destination="Il9-UE-ycf" id="NBF-tp-Q3l"/>
                 <outlet property="timeLabel" destination="fgo-a8-Lmv" id="qpC-7V-e3g"/>
             </connections>
-            <point key="canvasLocation" x="273" y="242"/>
+            <point key="canvasLocation" x="273" y="241.5"/>
         </tableViewCell>
     </objects>
 </document>

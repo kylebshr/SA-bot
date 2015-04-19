@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 
 // simple class for keeping track of shift objects
 
@@ -15,8 +16,9 @@ class Shift {
     var place: String!
     var start: Double!
     var end: Double!
+    var pfShift: PFObject?
 
-    init(place: String?, start: Double, end: Double) {
+    init(place: String?, start: Double, end: Double, shift: PFObject?) {
 
         // this may or may not exist
         if place != nil {
@@ -27,5 +29,6 @@ class Shift {
         }
         self.start = start
         self.end = end
+        self.pfShift = shift
     }
 }

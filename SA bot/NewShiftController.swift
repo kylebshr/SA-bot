@@ -41,7 +41,7 @@ class NewShiftController: UITableViewController, UIPickerViewDataSource, UIPicke
         // create a done button that dismisses the time picker
         let doneBarButton = UIBarButtonItem(title: "Done", style: .Done, target: self, action: "dismissDatePicker")
         // add the button to a toolbar
-        doneBar = UIToolbar(frame: CGRectMake(0, 0, self.view.frame.width, 44))
+        doneBar = UIToolbar(frame: CGRectMake(0, 0, view.frame.width, 44))
         doneBar.backgroundColor = UIColor.whiteColor()
         doneBar.items = [doneBarButton]
 
@@ -58,15 +58,20 @@ class NewShiftController: UITableViewController, UIPickerViewDataSource, UIPicke
     @IBAction func cancelWasPressed(sender: AnyObject) {
 
         dismissDatePicker()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     // Done was pressed
     @IBAction func doneWasPressed(sender: AnyObject) {
 
-
         if selectedLocation != nil && selectedStartTime != nil && selectedEndTime != nil {
-            // call the delegate with the
+
+            if selectedStartTime > selectedEndTime {
+
+                showAlert("Your Ending Time must be later than your Starting Time", message: nil)
+                return
+            }
+            // call the delegate with the chosen thing
             delegate?.newShiftWasMade(self, location: selectedLocation!, start: selectedStartTime!, stop: selectedEndTime!)
         }
         else {
@@ -259,6 +264,15 @@ class NewShiftController: UITableViewController, UIPickerViewDataSource, UIPicke
             let vc = segue.destinationViewController as! LocationSelectionController
             vc.delegate = self
         }
+    }
+
+    // shows a generic UIAlert with an OK button and the given title and message
+    func showAlert(title: String, message: String?) {
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let okButton = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(okButton)
+        presentViewController(alert, animated: true, completion: nil)
     }
 }
 

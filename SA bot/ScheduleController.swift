@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+import Parse
 
 class ScheduleController: UIViewController, UITableViewDelegate, UITableViewDataSource, NewShiftDelegate {
 
@@ -20,8 +19,8 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
     var schedule = [Shift]()
     var pendingUpdate = false
 
-    let uid = NSUserDefaults.standardUserDefaults().stringForKey("uid") as String!
     let refreshControl = UIRefreshControl()
+    let statusQuery = PFQuery(className: "Shift")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +37,14 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
         scheduleTable.rowHeight = UITableViewAutomaticDimension
 
         // get the schedule on loading the view
+        refreshControl.beginRefreshing()
         getSchedule()
     }
 
     func showOrHideAddMessage() {
 
         if schedule.count == 0 {
+            addMessageLabel.text = "Use the + button to add shifts\nto your schedule"
             addMessageLabel.hidden = false
         }
         else {
@@ -82,76 +83,53 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
     // get's the current schedule from the server
     func getSchedule() {
 
-        // for storing the schedule as we parse it
-        var newSchedule = [Shift]()
+        if let user = PFUser.currentUser() {
 
-        // send the request w/ the uid
-        Alamofire.request(.GET, baseURL + "schedule", parameters: ["uuid": uid])
-            .responseJSON { (request, _, data, error) in
+            if !pendingUpdate {
 
-                // if there was an error, let the user know
-                if (error != nil) {
+                pendingUpdate = true
 
-                    NSLog("Networking error: \(error!.localizedDescription)")
+                // for storing the schedule as we parse it
+                var newSchedule = [Shift]()
 
-                    self.showAlert("Networking Error", message: "Failed to download schedule")
-                }
-                // if no error, parse the json
-                else {
+                statusQuery.whereKey("User", equalTo: user)
+                statusQuery.orderByAscending("StartTime")
 
-                    let json = JSON(data!)
+                statusQuery.findObjectsInBackgroundWithBlock({ (objects, error) in
 
-                    for shift in json["schedule"].arrayValue {
+                    self.loadingIndicator.stopAnimating()
 
-                        if let id = shift["location"].string {
-                            if let begin = shift["begin"].double {
-                                if let end = shift["end"].double {
+                    if error == nil {
+                        for shift in objects! {
 
-                                    let newShift = Shift(place: id, start: begin, end: end)
-                                    newSchedule.append(newShift)
-                                }
+                            if let
+                                id = shift["Place"] as? String,
+                                start = shift["StartTime"] as? Double,
+                                end = shift["EndTime"] as? Double
+                            {
+                                let newShift = Shift(place: id, start: start, end: end, shift: shift as? PFObject)
+                                newSchedule.append(newShift)
                             }
                         }
+
+                        self.schedule = newSchedule
+                        self.showOrHideAddMessage()
+                        self.scheduleTable.reloadData()
                     }
-                    // assign the new schedule to our array, reload the table
-                    self.schedule = newSchedule
-                    self.scheduleTable.reloadData()
-                    self.showOrHideAddMessage()
-                }
+                    else {
+                        NSLog("Error: \(error?.localizedDescription)")
+                        self.showAlert("Failed to download schedule", message: nil)
+                    }
 
-                // end the refresher and the loading indicator that's animating on the first load
-                self.loadingIndicator.stopAnimating()
-                self.refreshControl.endRefreshing()
-        }
-    }
+                    var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC)))
+                    dispatch_after(dispatchTime, dispatch_get_main_queue(), {
 
-    // this gices the schedule to the server if we change it
-    func putSchedule() {
-
-        // builds the json for the server
-        var shifts = [[String: AnyObject]]()
-
-        // add all the current shifts
-        for shift in schedule {
-
-            var newShift: [String: AnyObject] = ["location": shift.place, "begin": shift.start, "end": shift.end]
-            shifts.append(newShift)
-        }
-
-        // build the json with the uid and shifts
-        let parameters: [String: AnyObject] = ["uuid": uid, "schedule": shifts]
-
-        // send the request
-        Alamofire.request(.PUT, baseURL + "schedule", parameters: parameters, encoding: .JSON)
-            .response { (request, response, data, error) in
-
-                // if we fail to send it, let the user know
-                if error != nil {
-
-                    NSLog("Networking error: \(error!.localizedDescription)")
-
-                    self.showAlert("Networking Error", message: "Failed to send your new schedule to the server. Please check your connection, or try again later")
-                }
+                        self.refreshControl.endRefreshing()
+                    })
+                    
+                    self.pendingUpdate = false
+                })
+            }
         }
     }
 
@@ -189,10 +167,10 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
         if editingStyle == UITableViewCellEditingStyle.Delete {
 
             // remove the item from our array, animate the deletion, and put the new schedule
+            schedule[indexPath.row].pfShift?.deleteInBackgroundWithBlock(nil)
             schedule.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             showOrHideAddMessage()
-            putSchedule()
         }
     }
 
@@ -219,12 +197,12 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     // shows a generic UIAlert with an OK button and the given title and message
-    func showAlert(title: String, message: String) {
+    func showAlert(title: String, message: String?) {
 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let okButton = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alert.addAction(okButton)
-        self.presentViewController(alert, animated: true, completion: nil)
+        presentViewController(alert, animated: true, completion: nil)
     }
 
     // MARK: Delegate functions
@@ -233,8 +211,23 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
     func newShiftWasMade(controller: NewShiftController, location: String, start: Double, stop: Double) {
 
         // make a new shift with the given params
-        let newShift = Shift(place: location, start: start, end: stop)
+        let newShift = Shift(place: location, start: start, end: stop, shift: nil)
         schedule.append(newShift)
+
+        // save the new shift to parse
+        let saveShift = PFObject(className: "Shift")
+        saveShift["StartTime"] = start
+        saveShift["EndTime"] = stop
+        saveShift["Place"] = location
+        saveShift["User"] = PFUser.currentUser()
+        saveShift.saveInBackgroundWithBlock({ (success, error) in
+
+            if let error = error {
+                
+                NSLog("Networking error: \(error.localizedDescription)")
+                self.showAlert("Networking Error", message: "Failed to save your new shift. Please check your internet connection, or try again later")
+            }
+        })
 
         // hide the add message maybe, and reload the table
         showOrHideAddMessage()
@@ -243,9 +236,6 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
         // dismiss the picker in case it's up, then dismiss the vc
         controller.dismissDatePicker()
         controller.dismissViewControllerAnimated(true, completion: nil)
-
-        // put the new schedule
-        putSchedule()
     }
 
     // Sets the delegate to self when we're making a new shift

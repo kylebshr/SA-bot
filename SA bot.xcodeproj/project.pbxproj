@@ -12,10 +12,18 @@
 		2718DF781AA11885005BE8C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2718DF761AA11885005BE8C5 /* Main.storyboard */; };
 		2718DF7A1AA11885005BE8C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2718DF791AA11885005BE8C5 /* Images.xcassets */; };
 		2718DF7D1AA11885005BE8C5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2718DF7B1AA11885005BE8C5 /* LaunchScreen.xib */; };
+		27A1D3551AE1A35B00A4B35F /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1D3541AE1A35B00A4B35F /* TabController.swift */; };
+		27A1D3571AE1A38600A4B35F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1D3561AE1A38600A4B35F /* Assets.swift */; };
+		27A1D3591AE1A4A900A4B35F /* ShortTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1D3581AE1A4A900A4B35F /* ShortTabBar.swift */; };
+		27A1D35B1AE1A77300A4B35F /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1D35A1AE1A77300A4B35F /* StatusViewController.swift */; };
+		27A1D35D1AE1A83A00A4B35F /* PrinterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1D35C1AE1A83A00A4B35F /* PrinterStatus.swift */; };
+		27A1D35F1AE1A98B00A4B35F /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A1D35E1AE1A98B00A4B35F /* StatusCell.xib */; };
+		27A1D3611AE1AB6700A4B35F /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1D3601AE1AB6700A4B35F /* StatusCell.swift */; };
 		27BE57531AA15707004DC660 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE57521AA15707004DC660 /* CustomTextField.swift */; };
 		27BE57571AA15DBD004DC660 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE57561AA15DBD004DC660 /* Globals.swift */; };
 		27BE57591AA16BE4004DC660 /* LocationSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE57581AA16BE4004DC660 /* LocationSelectionController.swift */; };
 		27BE575B1AA17EF5004DC660 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE575A1AA17EF5004DC660 /* WelcomeController.swift */; };
+		27D6A9271AE1C5CE00E1F019 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D6A9261AE1C5CE00E1F019 /* SignInViewController.swift */; };
 		27F818F71AA11A1B00AD9E1F /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27F818F61AA11A1B00AD9E1F /* ScheduleCell.xib */; };
 		27F818F91AA11B0B00AD9E1F /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F818F81AA11B0B00AD9E1F /* ScheduleCell.swift */; };
 		27F818FB1AA11C9F00AD9E1F /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F818FA1AA11C9F00AD9E1F /* Shift.swift */; };
@@ -31,10 +39,18 @@
 		2718DF771AA11885005BE8C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2718DF791AA11885005BE8C5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2718DF7C1AA11885005BE8C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		27A1D3541AE1A35B00A4B35F /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		27A1D3561AE1A38600A4B35F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		27A1D3581AE1A4A900A4B35F /* ShortTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortTabBar.swift; sourceTree = "<group>"; };
+		27A1D35A1AE1A77300A4B35F /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		27A1D35C1AE1A83A00A4B35F /* PrinterStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterStatus.swift; sourceTree = "<group>"; };
+		27A1D35E1AE1A98B00A4B35F /* StatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
+		27A1D3601AE1AB6700A4B35F /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		27BE57521AA15707004DC660 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		27BE57561AA15DBD004DC660 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		27BE57581AA16BE4004DC660 /* LocationSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSelectionController.swift; sourceTree = "<group>"; };
 		27BE575A1AA17EF5004DC660 /* WelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		27D6A9261AE1C5CE00E1F019 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		27F818F61AA11A1B00AD9E1F /* ScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleCell.xib; sourceTree = "<group>"; };
 		27F818F81AA11B0B00AD9E1F /* ScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		27F818FA1AA11C9F00AD9E1F /* Shift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
@@ -78,11 +94,14 @@
 			isa = PBXGroup;
 			children = (
 				2718DF721AA11885005BE8C5 /* AppDelegate.swift */,
+				27A1D3541AE1A35B00A4B35F /* TabController.swift */,
+				27A1D3581AE1A4A900A4B35F /* ShortTabBar.swift */,
 				27E284A91AA51DD20011B4B2 /* View Controllers */,
 				27E284AA1AA51DFA0011B4B2 /* Custom Classes, etc. */,
 				2718DF761AA11885005BE8C5 /* Main.storyboard */,
 				2718DF7B1AA11885005BE8C5 /* LaunchScreen.xib */,
 				27F818F61AA11A1B00AD9E1F /* ScheduleCell.xib */,
+				27A1D35E1AE1A98B00A4B35F /* StatusCell.xib */,
 				2718DF791AA11885005BE8C5 /* Images.xcassets */,
 				2718DF701AA11885005BE8C5 /* Supporting Files */,
 			);
@@ -101,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				27BE575A1AA17EF5004DC660 /* WelcomeController.swift */,
+				27D6A9261AE1C5CE00E1F019 /* SignInViewController.swift */,
+				27A1D35A1AE1A77300A4B35F /* StatusViewController.swift */,
 				2718DF741AA11885005BE8C5 /* ScheduleController.swift */,
 				27F818FC1AA150C900AD9E1F /* NewShiftController.swift */,
 				27BE57581AA16BE4004DC660 /* LocationSelectionController.swift */,
@@ -114,7 +135,10 @@
 				27BE57561AA15DBD004DC660 /* Globals.swift */,
 				27BE57521AA15707004DC660 /* CustomTextField.swift */,
 				27F818FA1AA11C9F00AD9E1F /* Shift.swift */,
+				27A1D35C1AE1A83A00A4B35F /* PrinterStatus.swift */,
 				27F818F81AA11B0B00AD9E1F /* ScheduleCell.swift */,
+				27A1D3601AE1AB6700A4B35F /* StatusCell.swift */,
+				27A1D3561AE1A38600A4B35F /* Assets.swift */,
 			);
 			name = "Custom Classes, etc.";
 			sourceTree = "<group>";
@@ -197,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2718DF781AA11885005BE8C5 /* Main.storyboard in Resources */,
+				27A1D35F1AE1A98B00A4B35F /* StatusCell.xib in Resources */,
 				2718DF7D1AA11885005BE8C5 /* LaunchScreen.xib in Resources */,
 				27F818F71AA11A1B00AD9E1F /* ScheduleCell.xib in Resources */,
 				2718DF7A1AA11885005BE8C5 /* Images.xcassets in Resources */,
@@ -259,11 +284,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				27BE57531AA15707004DC660 /* CustomTextField.swift in Sources */,
+				27A1D3571AE1A38600A4B35F /* Assets.swift in Sources */,
 				27F818FD1AA150C900AD9E1F /* NewShiftController.swift in Sources */,
 				2718DF751AA11885005BE8C5 /* ScheduleController.swift in Sources */,
 				27F818FB1AA11C9F00AD9E1F /* Shift.swift in Sources */,
+				27A1D3611AE1AB6700A4B35F /* StatusCell.swift in Sources */,
 				27F818F91AA11B0B00AD9E1F /* ScheduleCell.swift in Sources */,
+				27A1D35B1AE1A77300A4B35F /* StatusViewController.swift in Sources */,
+				27A1D3551AE1A35B00A4B35F /* TabController.swift in Sources */,
 				27BE57591AA16BE4004DC660 /* LocationSelectionController.swift in Sources */,
+				27A1D35D1AE1A83A00A4B35F /* PrinterStatus.swift in Sources */,
+				27A1D3591AE1A4A900A4B35F /* ShortTabBar.swift in Sources */,
+				27D6A9271AE1C5CE00E1F019 /* SignInViewController.swift in Sources */,
 				27BE575B1AA17EF5004DC660 /* WelcomeController.swift in Sources */,
 				27BE57571AA15DBD004DC660 /* Globals.swift in Sources */,
 				2718DF731AA11885005BE8C5 /* AppDelegate.swift in Sources */,
