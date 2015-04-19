@@ -22,7 +22,7 @@
 		27BE57531AA15707004DC660 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE57521AA15707004DC660 /* CustomTextField.swift */; };
 		27BE57571AA15DBD004DC660 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE57561AA15DBD004DC660 /* Globals.swift */; };
 		27BE57591AA16BE4004DC660 /* LocationSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE57581AA16BE4004DC660 /* LocationSelectionController.swift */; };
-		27BE575B1AA17EF5004DC660 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE575A1AA17EF5004DC660 /* WelcomeController.swift */; };
+		27BE575B1AA17EF5004DC660 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE575A1AA17EF5004DC660 /* SignUpViewController.swift */; };
 		27D6A9271AE1C5CE00E1F019 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D6A9261AE1C5CE00E1F019 /* SignInViewController.swift */; };
 		27F818F71AA11A1B00AD9E1F /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27F818F61AA11A1B00AD9E1F /* ScheduleCell.xib */; };
 		27F818F91AA11B0B00AD9E1F /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F818F81AA11B0B00AD9E1F /* ScheduleCell.swift */; };
@@ -49,7 +49,7 @@
 		27BE57521AA15707004DC660 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		27BE57561AA15DBD004DC660 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		27BE57581AA16BE4004DC660 /* LocationSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSelectionController.swift; sourceTree = "<group>"; };
-		27BE575A1AA17EF5004DC660 /* WelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		27BE575A1AA17EF5004DC660 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		27D6A9261AE1C5CE00E1F019 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		27F818F61AA11A1B00AD9E1F /* ScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleCell.xib; sourceTree = "<group>"; };
 		27F818F81AA11B0B00AD9E1F /* ScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		27E284A91AA51DD20011B4B2 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				27BE575A1AA17EF5004DC660 /* WelcomeController.swift */,
+				27BE575A1AA17EF5004DC660 /* SignUpViewController.swift */,
 				27D6A9261AE1C5CE00E1F019 /* SignInViewController.swift */,
 				27A1D35A1AE1A77300A4B35F /* StatusViewController.swift */,
 				2718DF741AA11885005BE8C5 /* ScheduleController.swift */,
@@ -296,7 +296,7 @@
 				27A1D35D1AE1A83A00A4B35F /* PrinterStatus.swift in Sources */,
 				27A1D3591AE1A4A900A4B35F /* ShortTabBar.swift in Sources */,
 				27D6A9271AE1C5CE00E1F019 /* SignInViewController.swift in Sources */,
-				27BE575B1AA17EF5004DC660 /* WelcomeController.swift in Sources */,
+				27BE575B1AA17EF5004DC660 /* SignUpViewController.swift in Sources */,
 				27BE57571AA15DBD004DC660 /* Globals.swift in Sources */,
 				2718DF731AA11885005BE8C5 /* AppDelegate.swift in Sources */,
 			);

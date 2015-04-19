@@ -27,6 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Parse.setApplicationId("REDACTED", clientKey: "REDACTED")
 
+
+        let notificationTypes: UIUserNotificationType = (UIUserNotificationType.Alert |
+            UIUserNotificationType.Badge |
+            UIUserNotificationType.Sound)
+        let settings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+
         // Check if they have a UID and if not, present the sign up screen
         if PFUser.currentUser() == nil {
 
@@ -41,5 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
 
         return true
+    }
+
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.channels = ["global"]
+        installation.saveInBackgroundWithBlock(nil)
     }
 }

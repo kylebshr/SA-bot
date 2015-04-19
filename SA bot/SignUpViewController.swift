@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class WelcomeController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -31,7 +31,6 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
     // MARK: Linked actions
 
     @IBAction func signUpWasPressed(sender: AnyObject) {
-
 
         if usernameField.text == "" {
 

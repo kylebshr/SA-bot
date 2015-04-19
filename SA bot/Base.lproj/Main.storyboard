@@ -178,10 +178,10 @@ when they need help</string>
             </objects>
             <point key="canvasLocation" x="704" y="-883"/>
         </scene>
-        <!--Welcome Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="CKP-YK-1vg">
             <objects>
-                <viewController id="wGk-RY-VzF" customClass="WelcomeController" customModule="SA_bot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wGk-RY-VzF" customClass="SignUpViewController" customModule="SA_bot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3og-vs-9cL"/>
                         <viewControllerLayoutGuide type="bottom" id="OJe-xn-tMd"/>
