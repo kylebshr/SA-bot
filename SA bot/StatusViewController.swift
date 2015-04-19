@@ -65,7 +65,9 @@ class StatusViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
             var updatedStatuses = [PrinterStatus]()
 
-            statusQuery.orderByAscending("PrinterName,Number")
+            statusQuery.orderByAscending("Number")
+            statusQuery.orderByDescending("StatusColor,PrinterName")
+
             statusQuery.findObjectsInBackgroundWithBlock({ (objects, error) in
 
                 self.loadingIndicator.stopAnimating()
@@ -126,18 +128,19 @@ class StatusViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.nameLabel.text = item.name
         cell.messageLabel.text = item.statusMessage
 
-        if item.statusColor == 2 {
+        if item.statusColor == 3 {
             cell.statusImage.image = Assets.imageOfRedstatus
         }
-        else if item.statusColor == 1 {
+        else if item.statusColor == 2 {
             cell.statusImage.image = Assets.imageOfYellowstatus
+        }
+        else if item.statusColor == 1 {
+            cell.statusImage.image = Assets.imageOfGreystatus
         }
         else if item.statusColor == 0 {
             cell.statusImage.image = Assets.imageOfGreenstatus
         }
-        else {
-            cell.statusImage.image = Assets.imageOfGreystatus
-        }
+
 
         return cell
     }
