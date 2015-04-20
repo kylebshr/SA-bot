@@ -12,6 +12,7 @@
 		2718DF781AA11885005BE8C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2718DF761AA11885005BE8C5 /* Main.storyboard */; };
 		2718DF7A1AA11885005BE8C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2718DF791AA11885005BE8C5 /* Images.xcassets */; };
 		2718DF7D1AA11885005BE8C5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2718DF7B1AA11885005BE8C5 /* LaunchScreen.xib */; };
+		2745DF6C1AE5664000DC0A08 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745DF6B1AE5664000DC0A08 /* SettingsViewController.swift */; };
 		27A1D3551AE1A35B00A4B35F /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1D3541AE1A35B00A4B35F /* TabController.swift */; };
 		27A1D3571AE1A38600A4B35F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1D3561AE1A38600A4B35F /* Assets.swift */; };
 		27A1D3591AE1A4A900A4B35F /* ShortTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1D3581AE1A4A900A4B35F /* ShortTabBar.swift */; };
@@ -39,6 +40,7 @@
 		2718DF771AA11885005BE8C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2718DF791AA11885005BE8C5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2718DF7C1AA11885005BE8C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2745DF6B1AE5664000DC0A08 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		27A1D3541AE1A35B00A4B35F /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		27A1D3561AE1A38600A4B35F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		27A1D3581AE1A4A900A4B35F /* ShortTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortTabBar.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				2718DF741AA11885005BE8C5 /* ScheduleController.swift */,
 				27F818FC1AA150C900AD9E1F /* NewShiftController.swift */,
 				27BE57581AA16BE4004DC660 /* LocationSelectionController.swift */,
+				2745DF6B1AE5664000DC0A08 /* SettingsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				27BE57591AA16BE4004DC660 /* LocationSelectionController.swift in Sources */,
 				27A1D35D1AE1A83A00A4B35F /* PrinterStatus.swift in Sources */,
 				27A1D3591AE1A4A900A4B35F /* ShortTabBar.swift in Sources */,
+				2745DF6C1AE5664000DC0A08 /* SettingsViewController.swift in Sources */,
 				27D6A9271AE1C5CE00E1F019 /* SignInViewController.swift in Sources */,
 				27BE575B1AA17EF5004DC660 /* SignUpViewController.swift in Sources */,
 				27BE57571AA15DBD004DC660 /* Globals.swift in Sources */,
