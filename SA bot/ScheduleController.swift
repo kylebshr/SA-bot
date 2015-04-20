@@ -41,6 +41,12 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
         getSchedule()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        getSchedule()
+    }
+
     func showOrHideAddMessage() {
 
         if schedule.count == 0 {
@@ -114,7 +120,10 @@ class ScheduleController: UIViewController, UITableViewDelegate, UITableViewData
 
                         self.schedule = newSchedule
                         self.showOrHideAddMessage()
-                        self.scheduleTable.reloadData()
+
+                        self.scheduleTable.beginUpdates()
+                        self.scheduleTable.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
+                        self.scheduleTable.endUpdates()
                     }
                     else {
                         NSLog("Error: \(error?.localizedDescription)")
