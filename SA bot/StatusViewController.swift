@@ -15,12 +15,14 @@ class StatusViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var statusTable: UITableView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
 
     var statuses = [PrinterStatus]()
     var pendingUpdate = false
+    var issuesOnly = false
+    var connectedRecently = false
 
     let refreshControl = UIRefreshControl()
-    let statusQuery = PFQuery(className: "PrinterStatus")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,10 @@ class StatusViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // get the schedule on loading the view
         refreshControl.beginRefreshing()
         updateStatus()
+
+        // set the settings button image
+        settingsButton.image = Assets.imageOfSettings
+        settingsButton.title = ""
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -51,9 +57,16 @@ class StatusViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         if statuses.count == 0 {
             messageLabel.hidden = false
+            if !connectedRecently {
+                messageLabel.text = "We're having trouble connecting to the printers. Check back later!"
+            }
+            else if issuesOnly {
+                messageLabel.text = "Everything looks good! There aren't any printers with issues right now."
+            }
         }
         else {
             messageLabel.hidden = true
+            messageLabel.text = ""
         }
     }
 
@@ -61,12 +74,21 @@ class StatusViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         if !pendingUpdate {
 
+            issuesOnly = NSUserDefaults.standardUserDefaults().boolForKey("issuesOnly")
+
             pendingUpdate = true
 
             var updatedStatuses = [PrinterStatus]()
+            let statusQuery = PFQuery(className: "PrinterStatus")
 
-            statusQuery.orderByAscending("Number")
-            statusQuery.orderByDescending("StatusColor,PrinterName")
+            if issuesOnly {
+                statusQuery.orderByAscending("Number")
+                statusQuery.orderByDescending("StatusColor,PrinterName")
+                statusQuery.whereKey("StatusColor", greaterThan: 0)
+            }
+            else {
+                statusQuery.orderByAscending("PrinterName,Number")
+            }
 
             statusQuery.findObjectsInBackgroundWithBlock({ (objects, error) in
 
@@ -91,11 +113,16 @@ class StatusViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     }
 
                     self.statuses = updatedStatuses
+                    self.connectedRecently = true
                     self.showOrHideMessage()
-                    self.statusTable.reloadData()
+
+                    self.statusTable.beginUpdates()
+                    self.statusTable.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
+                    self.statusTable.endUpdates()
                 }
                 else {
                     NSLog("Error: \(error?.localizedDescription)")
+                    self.connectedRecently = false
                 }
 
                 var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC)))
@@ -104,6 +131,7 @@ class StatusViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.refreshControl.endRefreshing()
                 })
                 
+                self.showOrHideMessage()
                 self.pendingUpdate = false
             })
         }
