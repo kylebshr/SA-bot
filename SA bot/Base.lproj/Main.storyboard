@@ -398,7 +398,7 @@ when they need help</string>
                     <navigationItem key="navigationItem" title="Printer Status" id="6Dm-J0-RI3">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="5Rt-yC-YTr">
                             <connections>
-                                <segue destination="jw4-SJ-VBJ" kind="presentation" id="ksV-Cw-ocg"/>
+                                <segue destination="jw4-SJ-VBJ" kind="presentation" id="wVu-be-acq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -417,14 +417,14 @@ when they need help</string>
         <scene sceneID="zaL-C5-pWx">
             <objects>
                 <tableViewController id="HJk-sF-c9b" customClass="SettingsViewController" customModule="SA_bot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Jyk-9e-9Eh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Jyk-9e-9Eh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="About" id="vP1-cx-vRd">
+                            <tableViewSection id="vP1-cx-vRd">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="wn9-Ng-V6W">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="wn9-Ng-V6W">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wn9-Ng-V6W" id="twJ-vB-BWF">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -460,19 +460,19 @@ when they need help</string>
                             </tableViewSection>
                             <tableViewSection headerTitle="Settings" id="a1L-S2-2Eh">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="p5z-vt-WGo">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="p5z-vt-WGo">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p5z-vt-WGo" id="JB8-BZ-T2Z">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Only show printers with issues" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaG-Iv-lKa">
-                                                    <rect key="frame" x="16" y="13" width="519" height="18"/>
+                                                    <rect key="frame" x="16" y="14" width="519" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Q1v-YO-6Qs">
-                                                    <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="543" y="8" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.96862745100000003" green="0.49803921569999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="issuesSwitchWasToggled:" destination="HJk-sF-c9b" eventType="valueChanged" id="llB-zN-xnq"/>
@@ -492,28 +492,22 @@ when they need help</string>
                             </tableViewSection>
                             <tableViewSection id="g5q-FC-sB0">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="316-1E-kqP">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="316-1E-kqP">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="316-1E-kqP" id="VHM-uQ-P46">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HF-bd-RPM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                                    <state key="normal" title="Log Out">
-                                                        <color key="titleColor" red="0.96862745100000003" green="0.49803921569999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="logOutWasPressed:" destination="HJk-sF-c9b" eventType="touchUpInside" id="mzt-lE-Fly"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Out" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYD-ao-pba">
+                                                    <rect key="frame" x="269" y="0.0" width="62" height="47"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.96862745100000003" green="0.49803921569999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="3HF-bd-RPM" secondAttribute="bottom" constant="-8" id="3zS-ng-Ly0"/>
-                                                <constraint firstItem="3HF-bd-RPM" firstAttribute="leading" secondItem="VHM-uQ-P46" secondAttribute="leading" id="D45-1m-fZY"/>
-                                                <constraint firstItem="3HF-bd-RPM" firstAttribute="trailing" secondItem="VHM-uQ-P46" secondAttribute="trailing" id="uHL-KX-Yhv"/>
-                                                <constraint firstItem="3HF-bd-RPM" firstAttribute="top" secondItem="VHM-uQ-P46" secondAttribute="topMargin" constant="-8" id="xS1-El-qUQ"/>
+                                                <constraint firstItem="vYD-ao-pba" firstAttribute="top" secondItem="VHM-uQ-P46" secondAttribute="topMargin" constant="-8" id="e0x-Hd-n1z"/>
+                                                <constraint firstAttribute="centerX" secondItem="vYD-ao-pba" secondAttribute="centerX" id="wjD-xb-7Xz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vYD-ao-pba" secondAttribute="bottom" constant="-8" id="xSN-zt-heB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -596,7 +590,7 @@ when they need help</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="vn2-R5-pMg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="epf-4f-cN9">
                                 <cells>
@@ -608,7 +602,7 @@ when they need help</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVq-Mj-0AT">
                                                     <rect key="frame" x="16" y="11" width="67" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="16" y="12" width="67" height="21"/>
@@ -643,7 +637,7 @@ when they need help</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqk-hT-i61">
                                                     <rect key="frame" x="16" y="11" width="103" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TVz-Tb-h7W" customClass="CustomTextField" customModule="SA_bot" customModuleProvider="target">
@@ -674,7 +668,7 @@ when they need help</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ending Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDY-O6-FLm">
                                                     <rect key="frame" x="16" y="11" width="96" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qwf-5V-H5x" customClass="CustomTextField" customModule="SA_bot" customModuleProvider="target">
@@ -738,7 +732,7 @@ when they need help</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bru-GF-fDb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" id="OXB-Si-WEo">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -897,7 +891,7 @@ when they need help</string>
         <!--Navigation Controller-->
         <scene sceneID="GZc-9e-irr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jw4-SJ-VBJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="jw4-SJ-VBJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Qew-Md-oxi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
