@@ -211,43 +211,61 @@ when they need help</string>
                         <sections>
                             <tableViewSection id="Ukf-Wb-q35">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kuk-N1-Uag">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="kuk-N1-Uag">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kuk-N1-Uag" id="baL-c9-T27">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0F4-sI-OAA">
-                                                    <rect key="frame" x="16" y="5" width="576" height="34"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0F4-sI-OAA">
+                                                    <rect key="frame" x="16" y="0.0" width="576" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0F4-sI-OAA" secondAttribute="bottom" constant="-8" id="DMD-Bw-xan"/>
+                                                <constraint firstItem="0F4-sI-OAA" firstAttribute="top" secondItem="baL-c9-T27" secondAttribute="topMargin" constant="-8" id="WFF-bX-p3l"/>
+                                                <constraint firstItem="0F4-sI-OAA" firstAttribute="leading" secondItem="baL-c9-T27" secondAttribute="leading" constant="16" id="dqH-WU-DSJ"/>
+                                                <constraint firstItem="0F4-sI-OAA" firstAttribute="trailing" secondItem="baL-c9-T27" secondAttribute="trailingMargin" id="mtB-ey-DWY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FbR-K4-TMZ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="FbR-K4-TMZ">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FbR-K4-TMZ" id="4Go-lu-ehc">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NU3-4K-56i">
-                                                    <rect key="frame" x="16" y="5" width="576" height="34"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NU3-4K-56i">
+                                                    <rect key="frame" x="16" y="0.0" width="576" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="NU3-4K-56i" secondAttribute="bottom" constant="-8" id="Hwb-q4-9QB"/>
+                                                <constraint firstItem="NU3-4K-56i" firstAttribute="trailing" secondItem="4Go-lu-ehc" secondAttribute="trailingMargin" id="WoV-xb-XX8"/>
+                                                <constraint firstItem="NU3-4K-56i" firstAttribute="leading" secondItem="4Go-lu-ehc" secondAttribute="leading" constant="16" id="kJw-J6-Nic"/>
+                                                <constraint firstItem="NU3-4K-56i" firstAttribute="top" secondItem="4Go-lu-ehc" secondAttribute="topMargin" constant="-8" id="nUH-5T-TlY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="itq-pD-6O1">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="itq-pD-6O1">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="itq-pD-6O1" id="QmU-Qi-WuU">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wcy-Rn-Dvp">
-                                                    <rect key="frame" x="16" y="5" width="576" height="34"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wcy-Rn-Dvp">
+                                                    <rect key="frame" x="16" y="0.0" width="576" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wcy-Rn-Dvp" firstAttribute="top" secondItem="QmU-Qi-WuU" secondAttribute="topMargin" constant="-8" id="19h-a3-f9f"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wcy-Rn-Dvp" secondAttribute="bottom" constant="-8" id="Jal-Vx-yqU"/>
+                                                <constraint firstItem="wcy-Rn-Dvp" firstAttribute="trailing" secondItem="QmU-Qi-WuU" secondAttribute="trailingMargin" id="v2l-cY-M8M"/>
+                                                <constraint firstItem="wcy-Rn-Dvp" firstAttribute="leading" secondItem="QmU-Qi-WuU" secondAttribute="leading" constant="16" id="wyU-fy-nfc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -799,40 +817,40 @@ when they need help</string>
                         <sections>
                             <tableViewSection id="ub3-Im-seC">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wof-pB-nzb">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wof-pB-nzb">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wof-pB-nzb" id="FU5-Kz-q2p">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ss5-nf-phT">
-                                                    <rect key="frame" x="16" y="5" width="576" height="34"/>
+                                                    <rect key="frame" x="16" y="0.0" width="576" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ss5-nf-phT" secondAttribute="bottom" constant="-4" id="Acu-fU-Nmu"/>
                                                 <constraint firstItem="ss5-nf-phT" firstAttribute="trailing" secondItem="FU5-Kz-q2p" secondAttribute="trailingMargin" id="WLB-Yt-MgI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ss5-nf-phT" secondAttribute="bottom" constant="-8" id="bg3-N4-rVB"/>
                                                 <constraint firstItem="ss5-nf-phT" firstAttribute="leading" secondItem="FU5-Kz-q2p" secondAttribute="leading" constant="16" id="hbR-XV-5iz"/>
-                                                <constraint firstItem="ss5-nf-phT" firstAttribute="top" secondItem="FU5-Kz-q2p" secondAttribute="topMargin" constant="-3" id="j8G-pj-R2R"/>
+                                                <constraint firstItem="ss5-nf-phT" firstAttribute="top" secondItem="FU5-Kz-q2p" secondAttribute="topMargin" constant="-8" id="nLC-IT-YvY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="49e-5U-XNt">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="49e-5U-XNt">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="49e-5U-XNt" id="ltl-cy-21b">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5c-cV-GUi">
-                                                    <rect key="frame" x="16" y="5" width="576" height="34"/>
+                                                    <rect key="frame" x="16" y="0.0" width="576" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="L5c-cV-GUi" secondAttribute="bottom" constant="-4" id="WRw-nL-c7G"/>
+                                                <constraint firstItem="L5c-cV-GUi" firstAttribute="top" secondItem="ltl-cy-21b" secondAttribute="topMargin" constant="-8" id="Av0-0B-R67"/>
                                                 <constraint firstItem="L5c-cV-GUi" firstAttribute="trailing" secondItem="ltl-cy-21b" secondAttribute="trailingMargin" id="a2R-Sc-2Gl"/>
-                                                <constraint firstItem="L5c-cV-GUi" firstAttribute="top" secondItem="ltl-cy-21b" secondAttribute="topMargin" constant="-3" id="wim-fF-WA2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="L5c-cV-GUi" secondAttribute="bottom" constant="-8" id="lel-FL-aTO"/>
                                                 <constraint firstItem="L5c-cV-GUi" firstAttribute="leading" secondItem="ltl-cy-21b" secondAttribute="leading" constant="16" id="zBU-BS-XkM"/>
                                             </constraints>
                                         </tableViewCellContentView>

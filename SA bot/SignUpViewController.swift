@@ -93,7 +93,7 @@ class SignUpViewController: UITableViewController {
     func showAlert(title: String, message: String?) {
 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let okButton = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let okButton = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
         alert.addAction(okButton)
         presentViewController(alert, animated: true, completion: nil)
     }
