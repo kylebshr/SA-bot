@@ -9,11 +9,11 @@
 import UIKit
 import Parse
 
-class SignInViewController: UIViewController, UITextFieldDelegate {
+class SignInViewController: UITableViewController {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Linked actions
 
-    @IBAction func signInWasPressed(sender: AnyObject) {
+    func signInWasPressed() {
 
 
         if usernameField.text == "" || passwordField.text == "" {
@@ -39,13 +39,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
 
         // hide the sign up button, show the spinner
-        signInButton.hidden = true
+        loginLabel.hidden = true
         activityIndicator.startAnimating()
 
         PFUser.logInWithUsernameInBackground(usernameField.text, password: passwordField.text, block: { (user, error) in
 
             self.activityIndicator.stopAnimating()
-            self.signInButton.hidden = false
+            self.loginLabel.hidden = false
 
             if user != nil {
 
@@ -81,5 +81,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let mainVC = storyboard.instantiateViewControllerWithIdentifier("TabController") as! TabController
         
         presentViewController(mainVC, animated: true, completion: nil)
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+
+        if indexPath.section == 1 && indexPath.row == 0 && !activityIndicator.isAnimating() {
+
+            signInWasPressed()
+        }
     }
 }

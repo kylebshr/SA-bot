@@ -9,12 +9,12 @@
 import UIKit
 import Parse
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: UITableViewController {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmField: UITextField!
-    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var signUpLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Linked actions
 
-    @IBAction func signUpWasPressed(sender: AnyObject) {
+    func signUpWasPressed() {
 
         if usernameField.text == "" {
 
@@ -44,12 +44,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
         else if passwordField.text != confirmField.text {
 
-            showAlert("Your password and you confirmation don't match", message: nil)
+            showAlert("Your password and your confirmation don't match", message: nil)
             return
         }
 
         // hide the sign up button, show the spinner
-        signUpButton.hidden = true
+        signUpLabel.hidden = true
         activityIndicator.startAnimating()
 
         let user = PFUser()
@@ -60,7 +60,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         user.signUpInBackgroundWithBlock({ (success, error) in
 
             self.activityIndicator.stopAnimating()
-            self.signUpButton.hidden = false
+            self.signUpLabel.hidden = false
 
             if success {
 
@@ -77,6 +77,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 self.showAlert("Error", message: message)
             }
         })
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+
+        if indexPath.section == 1 && indexPath.row == 0 && !activityIndicator.isAnimating() {
+
+            signUpWasPressed()
+        }
     }
 
     // shows a generic alert with the given title and message

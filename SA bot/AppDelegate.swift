@@ -21,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.enableLocalDatastore()
 
         var defaultACL = PFACL()
-        // Optionally enable public read access while disabling public write access.
-        // defaultACL.setPublicReadAccess(true)
         PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser:true)
 
         Parse.setApplicationId("REDACTED", clientKey: "REDACTED")
