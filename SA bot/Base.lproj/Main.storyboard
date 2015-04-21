@@ -125,9 +125,9 @@ when they need help</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPs-qd-dv0">
-                                <rect key="frame" x="215" y="494" width="170" height="34"/>
+                                <rect key="frame" x="16" y="496" width="568" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="9hw-l6-Kz9"/>
+                                    <constraint firstAttribute="height" constant="32" id="9hw-l6-Kz9"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="do8-Bn-odV"/>
                                     <constraint firstAttribute="width" constant="170" id="zqo-3Y-giy"/>
                                 </constraints>
@@ -136,15 +136,21 @@ when they need help</string>
                                     <color key="titleColor" red="0.96862745100000003" green="0.49803921569999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="do8-Bn-odV"/>
+                                        <exclude reference="zqo-3Y-giy"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="o2a-mj-yvp" kind="show" id="3Qa-Lh-5ZW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJX-tC-PPP">
-                                <rect key="frame" x="215" y="452" width="170" height="34"/>
+                                <rect key="frame" x="16" y="456" width="568" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="1hN-o1-8EM"/>
-                                    <constraint firstAttribute="height" constant="34" id="nfz-nQ-abf"/>
+                                    <constraint firstAttribute="height" constant="32" id="nfz-nQ-abf"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="tkm-dd-NEn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
@@ -152,6 +158,12 @@ when they need help</string>
                                     <color key="titleColor" red="0.96862745100000003" green="0.49803921569999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1hN-o1-8EM"/>
+                                        <exclude reference="tkm-dd-NEn"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="qX7-1X-7vx" kind="show" id="Ggi-SS-OBB"/>
                                 </connections>
@@ -159,16 +171,26 @@ when they need help</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XPs-qd-dv0" firstAttribute="trailing" secondItem="uyQ-NS-cQG" secondAttribute="trailingMargin" id="AkA-9A-qxv"/>
                             <constraint firstItem="xI5-LJ-bWG" firstAttribute="top" secondItem="8y5-8X-2iX" secondAttribute="bottom" constant="8" id="Sfe-Oy-Y4o"/>
                             <constraint firstAttribute="centerX" secondItem="xI5-LJ-bWG" secondAttribute="centerX" id="Szj-ij-H5d"/>
+                            <constraint firstItem="qJX-tC-PPP" firstAttribute="leading" secondItem="uyQ-NS-cQG" secondAttribute="leadingMargin" id="UGx-3x-eY3"/>
                             <constraint firstAttribute="centerX" secondItem="qJX-tC-PPP" secondAttribute="centerX" id="aZE-Oi-a4B"/>
                             <constraint firstAttribute="centerX" secondItem="XPs-qd-dv0" secondAttribute="centerX" id="bm3-br-PSg"/>
                             <constraint firstAttribute="trailing" secondItem="8y5-8X-2iX" secondAttribute="trailing" id="caO-qY-3Q5"/>
+                            <constraint firstItem="qJX-tC-PPP" firstAttribute="trailing" secondItem="uyQ-NS-cQG" secondAttribute="trailingMargin" id="d8w-Gs-ZKK"/>
+                            <constraint firstItem="XPs-qd-dv0" firstAttribute="leading" secondItem="uyQ-NS-cQG" secondAttribute="leadingMargin" id="goM-ip-RM1"/>
                             <constraint firstItem="XPs-qd-dv0" firstAttribute="top" secondItem="qJX-tC-PPP" secondAttribute="bottom" constant="8" id="ie4-EU-39N"/>
                             <constraint firstAttribute="centerY" secondItem="xI5-LJ-bWG" secondAttribute="centerY" id="jiz-v3-A3Y"/>
                             <constraint firstItem="PzU-rV-xTS" firstAttribute="top" secondItem="XPs-qd-dv0" secondAttribute="bottom" constant="8" id="sIY-9l-NIj"/>
                             <constraint firstItem="8y5-8X-2iX" firstAttribute="leading" secondItem="uyQ-NS-cQG" secondAttribute="leading" id="zE0-pc-Q9p"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aZE-Oi-a4B"/>
+                                <exclude reference="bm3-br-PSg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="dEY-W2-wIp">
                         <barButtonItem key="backBarButtonItem" title=" " id="ZZv-60-Hk7"/>
@@ -230,7 +252,7 @@ when they need help</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection footerTitle="You’ll be able to enter your schedule and get a push notification when a printer needs your attention" id="SDD-eB-HFp">
+                            <tableViewSection footerTitle="You’ll be able to enter your schedule and get push notifications when a printer needs your attention" id="SDD-eB-HFp">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="REk-2w-j5g">
                                         <autoresizingMask key="autoresizingMask"/>
